@@ -6,34 +6,68 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-            // Prompt user for input
-            Console.WriteLine("Please enter three numbers.");
-            Console.Write("First number:");
-            Console.Write("First number:");
-            Console.Write("First number:");
 
-            // String variable
-            string userInput;
-            // Read user input
-            userInput = Console.ReadLine();
+            // String variables
+            string userInput1, userInput2, userInput3;
 
-            // Evaluate user input
-            int evaluatedNumber;
-            bool isNumber;
-            isNumber = int.TryParse(userInput, out evaluatedNumber);
+            // Prompt user for inputs
+            Console.WriteLine("Please enter three Numbers.");
 
-            // Check if input is actually a number.
-            if (!isNumber)
-                Console.Write(userInput + " is not a number!");
+            Console.Write("First Number:");
+            userInput1 = Console.ReadLine();
+
+            Console.Write("Second Number:");
+            userInput2 = Console.ReadLine();
+
+            Console.Write("Third Number:");
+            userInput3 = Console.ReadLine();
+
+
+            // Evaluated input variables
+            int Number1, Number2, Number3;
+            bool isNumber1, isNumber2, isNumber3;
+
+            // Evaluate user inputs
+            isNumber1 = int.TryParse(userInput1, out Number1);
+            isNumber2 = int.TryParse(userInput2, out Number2);
+            isNumber3 = int.TryParse(userInput3, out Number3);
+            
+
+            // Check if inputs are actually Numbers.
+            if (!isNumber1 || !isNumber2 || !isNumber3)
+                Console.Write("Please write proper Numbers!");
             else
             {
-                // When input is an even number
-                if (evaluatedNumber % 2 == 0)
-                    Console.Write("Number " + evaluatedNumber + " is even.");
+                // Sort Numbers into a rising order
+                Console.WriteLine("Here are your Numbers represented in a nice and orderly fashion!");
 
-                // When input number is odd
+                if (Number1 < Number2)
+                {
+                    if (Number2 < Number3)
+                        Console.Write("{0},{1},{2}", Number1, Number2, Number3);
+                    else if (Number1 < Number3)
+                        Console.Write("{0},{1},{2}", Number1, Number3, Number2);
+                    else
+                        Console.Write("{0},{1},{2}", Number3, Number1, Number2);
+                }
+
+                else if (Number2 < Number3)
+                {
+                    if (Number1 < Number3)
+                        Console.Write("{0},{1},{2}", Number2, Number1, Number3);
+                    else
+                        Console.Write("{0},{1},{2}", Number2, Number3, Number1);
+                }
+
                 else
-                    Console.Write("Number {0} is odd.", evaluatedNumber);
+                {
+                    if (Number1 < Number2)
+                        Console.Write("{0},{1},{2}", Number3, Number1, Number2);
+                    else
+                        Console.Write("{0},{1},{2}", Number3, Number2, Number1);
+                }
+
+
             }
             // Wait for user input to end program.
             Console.ReadKey();
