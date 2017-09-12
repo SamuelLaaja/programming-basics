@@ -7,7 +7,10 @@ namespace Task4
         static void Main(string[] args)
         {
             // Prompt user for input
-            Console.WriteLine("Please enter a row of numbers. For example 2,6,7,3. ");
+            Console.WriteLine("Please enter three numbers.");
+            Console.Write("First number:");
+            Console.Write("First number:");
+            Console.Write("First number:");
 
             // String variable
             string userInput;
