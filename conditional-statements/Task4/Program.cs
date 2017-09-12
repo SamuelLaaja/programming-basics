@@ -1,16 +1,16 @@
 ﻿using System;
 
-namespace Task2
+namespace Task4
 {
     class Program
     {
         static void Main(string[] args)
         {
             // Prompt user for input
-            Console.Write("Please enter a number: ");
+            Console.WriteLine("Please enter a row of numbers. For example 2,6,7,3. ");
 
             // String variable
-            string userInput; 
+            string userInput;
             // Read user input
             userInput = Console.ReadLine();
 
@@ -27,7 +27,7 @@ namespace Task2
                 // When input is an even number
                 if (evaluatedNumber % 2 == 0)
                     Console.Write("Number " + evaluatedNumber + " is even.");
-                
+
                 // When input number is odd
                 else
                     Console.Write("Number {0} is odd.", evaluatedNumber);

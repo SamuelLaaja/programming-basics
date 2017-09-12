@@ -9,8 +9,9 @@ namespace Task3
             // Prompt user for input
             Console.Write("Please enter a number: ");
 
+            // string variable
+            string userInput; 
             // Read user input
-            string userInput; // string variable
             userInput = Console.ReadLine();
 
             // Evaluate user input
@@ -29,29 +30,30 @@ namespace Task3
                 Console.Write(userInput + " is not a number!");
             else
             {
+                // Create a string about odd/even status and insert it to final output string.
+                string oddEvenString;
+
                 // When input is an even number
                 if (evaluatedNumber % 2 == 0)
-                    Console.Write("Number " + evaluatedNumber + " is even.");
+                    oddEvenString = "even";
 
                 // When input number is odd
                 else
-                    Console.Write("Number {0} is odd.", evaluatedNumber);
+                    oddEvenString = ("odd");
 
-
-
+                
 
                 // When input is greater than zero
                 if (evaluatedNumber > 0)
-                    // The alternative way to do var-to-string insert
-                    Console.Write("Number " + evaluatedNumber + " is positive.");
+                    Console.Write("Number {0} is positive and {1}.", evaluatedNumber, oddEvenString);
 
                 // When less than zero
                 else if (evaluatedNumber < 0)
-                    Console.Write("Number {0} is negative.", evaluatedNumber);
+                    Console.Write("Number {0} is negative and {1}.", evaluatedNumber, oddEvenString);
 
                 // And when equals to zero
                 else
-                    Console.Write("Number {0} is zero.", evaluatedNumber);
+                    Console.Write("Number {0} is zero and {1}.", evaluatedNumber, oddEvenString);
 
             }
             // Wait for user input to end program.
