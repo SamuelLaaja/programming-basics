@@ -11,15 +11,15 @@ namespace Task4
             string userInput1, userInput2, userInput3;
 
             // Prompt user for inputs
-            Console.WriteLine("Please enter three Numbers.");
+            Console.WriteLine("Please enter three numbers.");
 
-            Console.Write("First Number:");
+            Console.Write("First number: ");
             userInput1 = Console.ReadLine();
 
-            Console.Write("Second Number:");
+            Console.Write("Second number: ");
             userInput2 = Console.ReadLine();
 
-            Console.Write("Third Number:");
+            Console.Write("Third number: ");
             userInput3 = Console.ReadLine();
 
 
@@ -35,11 +35,11 @@ namespace Task4
 
             // Check if inputs are actually Numbers.
             if (!isNumber1 || !isNumber2 || !isNumber3)
-                Console.Write("Please write proper Numbers!");
+                Console.Write("Please write proper numbers!");
             else
             {
                 // Sort Numbers into a rising order
-                Console.WriteLine("Here are your Numbers represented in a nice and orderly fashion!");
+                Console.WriteLine("Here are your numbers represented in a nice and orderly fashion!");
 
                 if (Number1 < Number2)
                 {
