@@ -19,27 +19,32 @@ namespace Task1
                 Console.Write("Please write a proper number!");
             else
             {
-
-                Console.WriteLine(Stars(amount));
+                // Make a new instance of Program Class and call method Stars()
+                Program prog = new Program();
+                Console.WriteLine(prog.Stars(amount));
             }
-
+            //Wait for user input before closing program
             Console.ReadKey();
         }
 
-        static string Stars(int numberOfStars)
+        // Method Stars expects an integer value
+        string Stars(int numberOfStars)
         {
             string starAmount;
             string starChars = "";
 
+            // Negative amount is not accepted
             if (numberOfStars < 0)
                 starAmount = String.Format("Number {0} is not allowed.", numberOfStars);
             else
             {
+                // Keeps adding * characters into the string until input amount is reached
                 for (int i = 0; i < numberOfStars; i++)
                 {
                     starChars += "*";
                 }
 
+                // Format string nicely before returning it from method call
                 starAmount = String.Format("I give you {0}'s worth of stars! \n{1}", numberOfStars, starChars);
             }
             return starAmount;
