@@ -43,13 +43,14 @@ namespace Task3
             float input;
             string userNumber = Console.ReadLine();
 
-            // Check if inputs are numbers.
+            // Check if input is a valid number.
             if (!float.TryParse(userNumber, out input))
             {
                 Console.Write(userNumber + " is not a proper number. Please try again: ");
 
                 return InputNumberBetweenRange(x, y);
             }
+            // Check if input is between given range
             else if (input < x || input > y)
             {
                 Console.Write(input + " is not between [{0},{1}] range. Please try again: ", x,y);
