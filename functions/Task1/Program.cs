@@ -31,21 +31,18 @@ namespace Task1
         string Stars(int numberOfStars)
         {
             string starAmount;
-            string starChars = "";
-
+            
             // Negative amount is not accepted
             if (numberOfStars < 0)
                 starAmount = String.Format("Number {0} is not allowed.", numberOfStars);
             else
             {
-                // Keeps adding * characters into the string until input amount is reached
-                for (int i = 0; i < numberOfStars; i++)
-                {
-                    starChars += "*";
-                }
+                // A new string is initiated with the length of numberOfStars and filled with * chars 
+                // This way minimizes the amount of garbage memory compared to manually filling a string with *:s
+                string str = new string('*', numberOfStars);
 
                 // Format string nicely before returning it from method call
-                starAmount = String.Format("I give you {0}'s worth of stars! \n{1}", numberOfStars, starChars);
+                starAmount = String.Format("I give you {0}'s worth of stars! \n{1}", numberOfStars, str);
             }
             return starAmount;
         }
